@@ -37,14 +37,11 @@ PGHOST=''
 PGDATABASE=''
 PGUSER=''
 PGPASSWORD=''
-ENDPOINT_ID=''
 ```
 
 The values to attach to each of these keys can be obtained from your database connection string. The way a connection string is structured follows this format:
 
-`postgresql://PGUSER:PGPASSWORD@ENDPOINT_ID.PGHOST/PGDATABASE`
-
-Note that the ENDPOINT_ID is a portion of the PGHOST. For example, a PGHOST `ep-hidden-sky-a2rjgvvq-pooler.eu-central-1.aws.neon.tech` contains the ENDPOINT_ID up to the first `.`: `ep-hidden-sky-a2rjgvvq-pooler`
+`postgresql://PGUSER:PGPASSWORD@PGHOST/PGDATABASE`
 
 **Example Connection String**
 ```
@@ -57,7 +54,6 @@ PGHOST='ep-hidden-sky-a2rjgvvq-pooler.eu-central-1.aws.neon.tech'
 PGDATABASE='mydatabase'
 PGUSER='my_username'
 PGPASSWORD='superSecretPassword'
-ENDPOINT_ID='ep-hidden-sky-a2rjgvvq-pooler'
 ```
 
 ## Easier Approach
@@ -82,7 +78,7 @@ const dbConnection = new Pool({
   database: PGDATABASE,
   username: PGUSER,
   password: PGPASSWORD,
-  port: 5432,
+  port: 5432, // you don't need to add the connection: {}, property that Neon includes in their code snippet
   ssl: {
     require: true,
   },

@@ -66,9 +66,7 @@ Neon lets you generate a `.env` file in their UI:
 
 ![](./db_env.png)
 
-_Figure 1: Choose Node.js from the dropdown_
-_Figure 2: Check Pooled connection_
-_Figure 3: Select the `.env` tab_
+_Figure 1: Choose Node.js from the dropdown_. _Figure 2: Check Pooled connection_. _Figure 3: Select the `.env` tab_.
 
 ## Creating A Database Connection In Code
 

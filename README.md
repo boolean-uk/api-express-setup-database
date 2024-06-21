@@ -27,9 +27,11 @@ You'll need two more packages:
 
 Do not git commit sensitive information such as database credentials! You should use _environment variables_ to keep them secret.
 
-1. In the root directory of the project, create a `.env` file
-2. Add `.env` to your `.gitignore` file to ensure it doesn't get committed into git
-3. Put the below `key=value`'s into your .env file:
+0. At the top of your express app, right above where you're doing `const express = require('express)'`, put the line `require('dotenv').config()`
+	- This will configure the environment variables in your project
+2. In the root directory of the project, create a `.env` file
+3. Add `.env` to your `.gitignore` file to ensure it doesn't get committed into git
+4. Put the below `key=value`'s into your .env file:
 ```bash
 PGHOST=''
 PGDATABASE=''
